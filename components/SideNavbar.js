@@ -17,7 +17,7 @@ import NavButton from './NavButton';
                             <div className="text-wrapper">
                                 <p className="profile-name">Ashwani</p>
                                 <div>
-                                    <small className="designation text-muted">Designation</small>
+                                    <small className="designation text-muted">Developer</small>
                                     <span className="status-indicator online"></span>
                                 </div>
                             </div>
@@ -28,6 +28,7 @@ import NavButton from './NavButton';
                 <NavButton text="Dashboard" iconClassName="menu-icon mdi mdi-television" to="/"/>
                 <NavButton text="Books" iconClassName="menu-icon mdi mdi-book" to="/books"/>
                 <NavButton text="Orders" iconClassName="menu-icon mdi mdi-receipt" to="/orders"/>
+                <NavButton text="Manage Discounts" iconClassName="menu-icon fa fa-percent" to="/manage-discount"/>
                 <NavButton text="Chat" iconClassName="menu-icon fa fa-envelope" to="/chat"/>
                 <NavButton text="Notes" iconClassName="menu-icon fa fa-sticky-note-o" to="/notes"/>
                 <NavButton text="My Account Settings" iconClassName="menu-icon fa fa-gear" to="/account"/>

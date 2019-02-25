@@ -854,7 +854,7 @@ function (_Component) {
           lineNumber: 20
         },
         __self: this
-      }, "Designation"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("span", {
+      }, "Developer"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("span", {
         className: "status-indicator online",
         __source: {
           fileName: _jsxFileName,
@@ -910,12 +910,21 @@ function (_Component) {
         },
         __self: this
       }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_NavButton__WEBPACK_IMPORTED_MODULE_2__["default"], {
+        text: "Manage Discounts",
+        iconClassName: "menu-icon fa fa-percent",
+        to: "/manage-discount",
+        __source: {
+          fileName: _jsxFileName,
+          lineNumber: 31
+        },
+        __self: this
+      }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_NavButton__WEBPACK_IMPORTED_MODULE_2__["default"], {
         text: "Chat",
         iconClassName: "menu-icon fa fa-envelope",
         to: "/chat",
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 31
+          lineNumber: 32
         },
         __self: this
       }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_NavButton__WEBPACK_IMPORTED_MODULE_2__["default"], {
@@ -924,7 +933,7 @@ function (_Component) {
         to: "/notes",
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 32
+          lineNumber: 33
         },
         __self: this
       }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_NavButton__WEBPACK_IMPORTED_MODULE_2__["default"], {
@@ -933,7 +942,7 @@ function (_Component) {
         to: "/account",
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 33
+          lineNumber: 34
         },
         __self: this
       }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_NavButton__WEBPACK_IMPORTED_MODULE_2__["default"], {
@@ -942,7 +951,7 @@ function (_Component) {
         to: "/logout",
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 34
+          lineNumber: 35
         },
         __self: this
       })));

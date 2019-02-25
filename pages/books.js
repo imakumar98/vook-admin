@@ -1,76 +1,88 @@
 import React, { Component } from 'react'
 import Link from 'next/link';
+import {Query} from 'react-apollo';
+import gql from 'graphql-tag'; 
+import Book from './../components/Books/BookRow';
 
-export default class books extends Component {
+const GET_ALL_BOOKS_QUERY = gql`
+    query GET_ALL_BOOKS_QUERY {
+
+        getAllBooks{
+            id
+            title 
+            author 
+            publisher 
+            mrp
+            discount
+            category
+            type
+            images{
+                src
+            }
+            sku
+        }
+    }
+    
+`;
+
+class books extends Component {
   render() {
     return (
-        <div className="row">
-        <div className="col-12 grid-margin">
-            <div className="card">
-                <div className="card-header">
-                    <h4 className="text-center" style={{marginBottom:'50px'}}>ALL BOOKS</h4>
-                    <div className="pull-right">
-                    <Link href="/book/add">
-                    <a className="btn btn-primary btn-fw">ADD BOOK</a>
-                    </Link>
-                    </div>
-                </div>
-                <div className="card-body">
-                    <div className="form-sample">
-                        
-                        <div className="row">
-                            <div className="table-responsive">
-                                <table className="table">
-                                    <thead>
-                                        <tr>
-                                            <th>SKU</th>
-                                            <th>Image</th>
-                                            <th>Title</th>
-                                            <th>Author/Publisher</th>
-                                            <th>Price</th>
-                                            <th>Category</th>
-                                            <th>Date</th>
-                                            <th>Action</th>
-                                        </tr>
-                                    </thead>
-                                    <tbody>
-                                        <tr>
-                                           <td>#4343</td>
-                                           <td><img src="" alt="image"></img></td>
-                                           <td>
-                                               <Link href="/book-edit">
-                                               <a>
-                                               Mathematics
-                                               </a>
-                                                </Link>
-                                            </td>
-                                           <td>RD Sharma, Dhanpat Rai Publication</td>
-                                           <td>345</td>
-                                           <td>CLass 10</td>
-                                           <td>21-10-2018</td>
-                                           <td>
-                                               <Link href="/book"><a>EDIT</a></Link>&nbsp;&nbsp;
-                                               <Link href=""><a>DELETE</a></Link>
-                                           </td>
-                                            
-                                        </tr>
-                                        
-                                        
-                                       
-                                       
-                                    </tbody>
-                                </table>
+        <Query query={GET_ALL_BOOKS_QUERY}>
+            {({data,error,loading})=>{
+                
+                return (
+                    <div className="row">
+                    <div className="col-12 grid-margin">
+                        <div className="card">
+                            <div className="card-header">
+                                <h4 className="text-center" style={{marginBottom:'50px'}}>ALL BOOKS</h4>
+                                <div className="pull-right">
+                                <Link prefetch href="/book/add">
+                                    <a className="btn btn-primary btn-fw">ADD BOOK</a>
+                                </Link>
+                                </div>
+                            </div>
+                            <div className="card-body">
+                                <div className="form-sample">
+                                    
+                                    <div className="row">
+                                        <div className="table-responsive">
+                                            <table className="table">
+                                                <thead>
+                                                    <tr>
+                                                        <th>SKU</th>
+                                                        <th>Image</th>
+                                                        <th>Title</th>
+                                                        <th>Author/Publisher</th>
+                                                        <th>MRP</th>
+                                                        <th>Category</th>
+                                                        <th>Type</th>
+                                                        <th>Date</th>
+                                                        <th>Action</th>
+                                                    </tr>
+                                                </thead>
+                                                <tbody>
+                                                    {!data.getAllBooks.length && <p>You Have 0 Books In Database</p>}
+                                                    {data.getAllBooks.map((book,index)=><Book book={book} key={index} />)}
+                                                    {loading && <p>Loading...</p>}
+                                                </tbody>
+                                            </table>
+                                        </div>
+                                    </div>
+                                    <br/><br/>
+                                </div>
                             </div>
                         </div>
-                        
-                        
-                        
-                        <br/><br/>
                     </div>
                 </div>
-            </div>
-        </div>
-    </div>
+                );
+            }}
+        </Query>
+    
     )
   }
 }
+
+
+export default books;
