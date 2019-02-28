@@ -1,21 +1,12 @@
 import React from 'react'
 import {Query} from 'react-apollo';
-import gql from 'graphql-tag';
 import BookCategory from './BookCategory';
 import BookType from './BookType';
 import BookPublisher from './BookPublisher';
+import {GET_CATEGORIES_QUERY, GET_TYPES_QUERY, GET_PUBLISHERS_QUERY} from './../../lib/QueryMutations';
 
-const GET_CATEGORIES_QUERY = gql`
-    query GET_CATEGORIES_QUERY{
-        getCategories{
-            id
-            name
-            products{
-                id
-            }
-        }
-    }
-`;
+
+
 
 function BookCategoryList() {
   return (
@@ -31,7 +22,7 @@ function BookCategoryList() {
                             <tr>
                                 <th>Sno.</th>
                                 <th>Category Name</th>
-                                <th>Discount</th>
+                               
                                 <th>Quantity</th>
                             </tr>
                         </thead>
@@ -39,7 +30,7 @@ function BookCategoryList() {
                             {({data,error,loading})=>{
                                 if(loading) return <tr><td><p>Loading...</p></td></tr>
                                 if(error) return <Error error="error"/>
-                                console.log(data);
+                                
                                 return (
                                     <tbody>
                                         {data.getCategories.map((category,index)=><BookCategory category={category} key={index} sno={index+1}/>)}
@@ -62,13 +53,21 @@ function BookCategoryList() {
                     <tr>
                         <th>Sno.</th>
                         <th>Type Name</th>
-                        <th>Discount</th>
                         <th>Quantity</th>
                     </tr>
                     </thead>
-                    <tbody>
-                        <BookType type={{name:'Class 12', quantity:50, discount:30 }} sno={1}/>
-                    </tbody>
+                    <Query query={GET_TYPES_QUERY}>
+                        {({data,error,loading})=>{
+                            if(loading) return <tr><td><p>Loading...</p></td></tr>
+                            if(error) return <Error error="error"/>
+                            
+                            return (
+                                <tbody>
+                                    {data.getTypes.map((type,index)=><BookType type={type} key={index} sno={index+1}/>)}
+                                </tbody>
+                            );
+                        }}
+                    </Query>
                 </table>
                 </div>
             </div>
@@ -90,9 +89,18 @@ function BookCategoryList() {
                         <th>Quantity</th>
                     </tr>
                     </thead>
-                    <tbody>
-                        <BookPublisher publisher={{name:'Class 12', quantity:50, discount:30 }} sno={1}/>
-                    </tbody>
+                    <Query query={GET_PUBLISHERS_QUERY}>
+                        {({data,error,loading})=>{
+                            if(loading) return <tr><td><p>Loading...</p></td></tr>
+                            if(error) return <Error error="error"/>
+                            
+                            return (
+                                <tbody>
+                                    {data.getPublishers.map((publisher,index)=><BookPublisher publisher={publisher} key={index} sno={index+1}/>)}
+                                </tbody>
+                            );
+                        }}
+                    </Query>
                 </table>
                 </div>
             </div>
@@ -104,3 +112,4 @@ function BookCategoryList() {
 }
 
 export default BookCategoryList;
+export {GET_CATEGORIES_QUERY,GET_TYPES_QUERY};

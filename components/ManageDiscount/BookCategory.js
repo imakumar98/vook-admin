@@ -5,10 +5,10 @@ function BookCategory({category,sno}) {
     <tr>
         <td>{sno}</td>
         <td>{category.name[0].toUpperCase() + category.name.slice(1)}</td>
-        <td>{category.discount}</td>
+        
         <td>
-           {category.products && category.products.length} 
-           {!category.products && 0}
+           {category.books && category.books.length} 
+           {!category.books && 0}
         </td>
         
     </tr>

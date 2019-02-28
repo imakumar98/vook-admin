@@ -1,5 +1,6 @@
 import React from 'react'
 import Link from 'next/link';
+import {getCapitalizedString} from './../../lib/utilFunctions';
 
 function BookRow({book}) {
   return (
@@ -13,11 +14,11 @@ function BookRow({book}) {
                 </a>
             </Link>
         </td>
-        <td>{book.author}, {book.publisher}</td>
+        <td>{book.author}, {getCapitalizedString(book.publisher.name)}</td>
         <td>{book.mrp}</td>
-        <td>{book.category}</td>
-        <td>{book.type}</td>
-        <td>21-10-2018</td>
+        <td>{getCapitalizedString(book.category.name)}</td>
+        <td>{getCapitalizedString(book.type.name)}</td>
+        <td>{book.dateTime}</td>
         <td>
             <Link href="/book"><a>EDIT</a></Link>&nbsp;&nbsp;
             <Link href=""><a>DELETE</a></Link>

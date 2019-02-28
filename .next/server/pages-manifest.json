@@ -1,1 +1,1 @@
-{"/_app":"static\\development\\pages\\_app.js","/_error":"static\\development\\pages\\_error.js","/_document":"static\\development\\pages\\_document.js","/manage-discount":"static\\development\\pages\\manage-discount.js"}
+{"/_app":"static\\development\\pages\\_app.js","/_error":"static\\development\\pages\\_error.js","/_document":"static\\development\\pages\\_document.js","/book/add":"static\\development\\pages\\book\\add.js","/manage-discount":"static\\development\\pages\\manage-discount.js","/books":"static\\development\\pages\\books.js"}

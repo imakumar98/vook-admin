@@ -88,7 +88,7 @@ module.exports =
 /******/
 /******/
 /******/ 	// Load entry module and return exports
-/******/ 	return __webpack_require__(__webpack_require__.s = 3);
+/******/ 	return __webpack_require__(__webpack_require__.s = 5);
 /******/ })
 /************************************************************************/
 /******/ ({
@@ -131,16 +131,10 @@ function BookCategory(_ref) {
   }, category.name[0].toUpperCase() + category.name.slice(1)), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("td", {
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 8
-    },
-    __self: this
-  }, category.discount), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("td", {
-    __source: {
-      fileName: _jsxFileName,
       lineNumber: 9
     },
     __self: this
-  }, category.products && category.products.length, !category.products && 0));
+  }, category.books && category.books.length, !category.books && 0));
 }
 
 /* harmony default export */ __webpack_exports__["default"] = (BookCategory);
@@ -151,7 +145,7 @@ function BookCategory(_ref) {
 /*!*******************************************************!*\
   !*** ./components/ManageDiscount/BookCategoryList.js ***!
   \*******************************************************/
-/*! exports provided: default */
+/*! exports provided: default, GET_CATEGORIES_QUERY, GET_TYPES_QUERY */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -160,130 +154,113 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
 /* harmony import */ var react_apollo__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! react-apollo */ "react-apollo");
 /* harmony import */ var react_apollo__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(react_apollo__WEBPACK_IMPORTED_MODULE_1__);
-/* harmony import */ var graphql_tag__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! graphql-tag */ "graphql-tag");
-/* harmony import */ var graphql_tag__WEBPACK_IMPORTED_MODULE_2___default = /*#__PURE__*/__webpack_require__.n(graphql_tag__WEBPACK_IMPORTED_MODULE_2__);
-/* harmony import */ var _BookCategory__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./BookCategory */ "./components/ManageDiscount/BookCategory.js");
-/* harmony import */ var _BookType__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ./BookType */ "./components/ManageDiscount/BookType.js");
-/* harmony import */ var _BookPublisher__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ./BookPublisher */ "./components/ManageDiscount/BookPublisher.js");
+/* harmony import */ var _BookCategory__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./BookCategory */ "./components/ManageDiscount/BookCategory.js");
+/* harmony import */ var _BookType__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./BookType */ "./components/ManageDiscount/BookType.js");
+/* harmony import */ var _BookPublisher__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ./BookPublisher */ "./components/ManageDiscount/BookPublisher.js");
+/* harmony import */ var _lib_QueryMutations__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ./../../lib/QueryMutations */ "./lib/QueryMutations.js");
+/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "GET_CATEGORIES_QUERY", function() { return _lib_QueryMutations__WEBPACK_IMPORTED_MODULE_5__["GET_CATEGORIES_QUERY"]; });
+
+/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "GET_TYPES_QUERY", function() { return _lib_QueryMutations__WEBPACK_IMPORTED_MODULE_5__["GET_TYPES_QUERY"]; });
+
 var _jsxFileName = "D:\\Learn\\book-store\\vook-admin\\components\\ManageDiscount\\BookCategoryList.js";
 
-function _templateObject() {
-  var data = _taggedTemplateLiteral(["\n    query GET_CATEGORIES_QUERY{\n        getCategories{\n            id\n            name\n            products{\n                id\n            }\n        }\n    }\n"]);
-
-  _templateObject = function _templateObject() {
-    return data;
-  };
-
-  return data;
-}
-
-function _taggedTemplateLiteral(strings, raw) { if (!raw) { raw = strings.slice(0); } return Object.freeze(Object.defineProperties(strings, { raw: { value: Object.freeze(raw) } })); }
 
 
 
 
 
-
-
-var GET_CATEGORIES_QUERY = graphql_tag__WEBPACK_IMPORTED_MODULE_2___default()(_templateObject());
 
 function BookCategoryList() {
   return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 22
+      lineNumber: 13
     },
     __self: this
   }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
     className: "row",
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 23
+      lineNumber: 14
     },
     __self: this
   }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
     class: "col-lg-6 grid-margin stretch-card",
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 24
+      lineNumber: 15
     },
     __self: this
   }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
     class: "card",
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 25
+      lineNumber: 16
     },
     __self: this
   }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
     class: "card-body",
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 26
+      lineNumber: 17
     },
     __self: this
   }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("h4", {
     class: "card-title",
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 27
+      lineNumber: 18
     },
     __self: this
   }, "Book Categories"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
     class: "table-responsive",
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 28
+      lineNumber: 19
     },
     __self: this
   }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("table", {
     class: "table",
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 29
+      lineNumber: 20
     },
     __self: this
   }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("thead", {
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 30
+      lineNumber: 21
     },
     __self: this
   }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("tr", {
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 31
+      lineNumber: 22
     },
     __self: this
   }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("th", {
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 32
+      lineNumber: 23
     },
     __self: this
   }, "Sno."), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("th", {
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 33
+      lineNumber: 24
     },
     __self: this
   }, "Category Name"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("th", {
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 34
-    },
-    __self: this
-  }, "Discount"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("th", {
-    __source: {
-      fileName: _jsxFileName,
-      lineNumber: 35
+      lineNumber: 26
     },
     __self: this
   }, "Quantity"))), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_apollo__WEBPACK_IMPORTED_MODULE_1__["Query"], {
-    query: GET_CATEGORIES_QUERY,
+    query: _lib_QueryMutations__WEBPACK_IMPORTED_MODULE_5__["GET_CATEGORIES_QUERY"],
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 38
+      lineNumber: 29
     },
     __self: this
   }, function (_ref) {
@@ -293,19 +270,19 @@ function BookCategoryList() {
     if (loading) return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("tr", {
       __source: {
         fileName: _jsxFileName,
-        lineNumber: 40
+        lineNumber: 31
       },
       __self: this
     }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("td", {
       __source: {
         fileName: _jsxFileName,
-        lineNumber: 40
+        lineNumber: 31
       },
       __self: this
     }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("p", {
       __source: {
         fileName: _jsxFileName,
-        lineNumber: 40
+        lineNumber: 31
       },
       __self: this
     }, "Loading...")));
@@ -313,25 +290,24 @@ function BookCategoryList() {
       error: "error",
       __source: {
         fileName: _jsxFileName,
-        lineNumber: 41
+        lineNumber: 32
       },
       __self: this
     });
-    console.log(data);
     return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("tbody", {
       __source: {
         fileName: _jsxFileName,
-        lineNumber: 44
+        lineNumber: 35
       },
       __self: this
     }, data.getCategories.map(function (category, index) {
-      return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_BookCategory__WEBPACK_IMPORTED_MODULE_3__["default"], {
+      return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_BookCategory__WEBPACK_IMPORTED_MODULE_2__["default"], {
         category: category,
         key: index,
         sno: index + 1,
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 45
+          lineNumber: 36
         },
         __self: this
       });
@@ -340,205 +316,276 @@ function BookCategoryList() {
     class: "col-lg-6 grid-margin stretch-card",
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 55
+      lineNumber: 46
     },
     __self: this
   }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
     class: "card",
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 56
+      lineNumber: 47
     },
     __self: this
   }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
     class: "card-body",
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 57
+      lineNumber: 48
     },
     __self: this
   }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("h4", {
     class: "card-title",
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 58
+      lineNumber: 49
     },
     __self: this
   }, "Book Types"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
     class: "table-responsive",
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 59
+      lineNumber: 50
     },
     __self: this
   }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("table", {
     class: "table",
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 60
+      lineNumber: 51
     },
     __self: this
   }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("thead", {
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 61
+      lineNumber: 52
     },
     __self: this
   }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("tr", {
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 62
+      lineNumber: 53
     },
     __self: this
   }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("th", {
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 63
+      lineNumber: 54
     },
     __self: this
   }, "Sno."), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("th", {
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 64
+      lineNumber: 55
     },
     __self: this
   }, "Type Name"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("th", {
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 65
+      lineNumber: 56
     },
     __self: this
-  }, "Discount"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("th", {
+  }, "Quantity"))), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_apollo__WEBPACK_IMPORTED_MODULE_1__["Query"], {
+    query: _lib_QueryMutations__WEBPACK_IMPORTED_MODULE_5__["GET_TYPES_QUERY"],
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 66
+      lineNumber: 59
     },
     __self: this
-  }, "Quantity"))), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("tbody", {
-    __source: {
-      fileName: _jsxFileName,
-      lineNumber: 69
-    },
-    __self: this
-  }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_BookType__WEBPACK_IMPORTED_MODULE_4__["default"], {
-    type: {
-      name: 'Class 12',
-      quantity: 50,
-      discount: 30
-    },
-    sno: 1,
-    __source: {
-      fileName: _jsxFileName,
-      lineNumber: 70
-    },
-    __self: this
-  })))))))), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+  }, function (_ref2) {
+    var data = _ref2.data,
+        error = _ref2.error,
+        loading = _ref2.loading;
+    if (loading) return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("tr", {
+      __source: {
+        fileName: _jsxFileName,
+        lineNumber: 61
+      },
+      __self: this
+    }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("td", {
+      __source: {
+        fileName: _jsxFileName,
+        lineNumber: 61
+      },
+      __self: this
+    }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("p", {
+      __source: {
+        fileName: _jsxFileName,
+        lineNumber: 61
+      },
+      __self: this
+    }, "Loading...")));
+    if (error) return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(Error, {
+      error: "error",
+      __source: {
+        fileName: _jsxFileName,
+        lineNumber: 62
+      },
+      __self: this
+    });
+    return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("tbody", {
+      __source: {
+        fileName: _jsxFileName,
+        lineNumber: 65
+      },
+      __self: this
+    }, data.getTypes.map(function (type, index) {
+      return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_BookType__WEBPACK_IMPORTED_MODULE_3__["default"], {
+        type: type,
+        key: index,
+        sno: index + 1,
+        __source: {
+          fileName: _jsxFileName,
+          lineNumber: 66
+        },
+        __self: this
+      });
+    }));
+  }))))))), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
     className: "row",
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 78
+      lineNumber: 77
     },
     __self: this
   }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
     class: "col-lg-12 grid-margin stretch-card",
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 79
+      lineNumber: 78
     },
     __self: this
   }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
     class: "card",
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 80
+      lineNumber: 79
     },
     __self: this
   }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
     class: "card-body",
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 81
+      lineNumber: 80
     },
     __self: this
   }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("h4", {
     class: "card-title",
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 82
+      lineNumber: 81
     },
     __self: this
   }, "Publisher List"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
     class: "table-responsive",
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 83
+      lineNumber: 82
     },
     __self: this
   }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("table", {
     class: "table",
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 84
+      lineNumber: 83
     },
     __self: this
   }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("thead", {
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 85
+      lineNumber: 84
     },
     __self: this
   }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("tr", {
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 86
+      lineNumber: 85
     },
     __self: this
   }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("th", {
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 87
+      lineNumber: 86
     },
     __self: this
   }, "Sno."), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("th", {
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 88
+      lineNumber: 87
     },
     __self: this
   }, "Publisher Name"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("th", {
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 89
+      lineNumber: 88
     },
     __self: this
   }, "Discount"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("th", {
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 90
+      lineNumber: 89
     },
     __self: this
-  }, "Quantity"))), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("tbody", {
+  }, "Quantity"))), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_apollo__WEBPACK_IMPORTED_MODULE_1__["Query"], {
+    query: _lib_QueryMutations__WEBPACK_IMPORTED_MODULE_5__["GET_PUBLISHERS_QUERY"],
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 93
+      lineNumber: 92
     },
     __self: this
-  }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_BookPublisher__WEBPACK_IMPORTED_MODULE_5__["default"], {
-    publisher: {
-      name: 'Class 12',
-      quantity: 50,
-      discount: 30
-    },
-    sno: 1,
-    __source: {
-      fileName: _jsxFileName,
-      lineNumber: 94
-    },
-    __self: this
-  })))))))));
+  }, function (_ref3) {
+    var data = _ref3.data,
+        error = _ref3.error,
+        loading = _ref3.loading;
+    if (loading) return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("tr", {
+      __source: {
+        fileName: _jsxFileName,
+        lineNumber: 94
+      },
+      __self: this
+    }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("td", {
+      __source: {
+        fileName: _jsxFileName,
+        lineNumber: 94
+      },
+      __self: this
+    }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("p", {
+      __source: {
+        fileName: _jsxFileName,
+        lineNumber: 94
+      },
+      __self: this
+    }, "Loading...")));
+    if (error) return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(Error, {
+      error: "error",
+      __source: {
+        fileName: _jsxFileName,
+        lineNumber: 95
+      },
+      __self: this
+    });
+    return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("tbody", {
+      __source: {
+        fileName: _jsxFileName,
+        lineNumber: 98
+      },
+      __self: this
+    }, data.getPublishers.map(function (publisher, index) {
+      return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_BookPublisher__WEBPACK_IMPORTED_MODULE_4__["default"], {
+        publisher: publisher,
+        key: index,
+        sno: index + 1,
+        __source: {
+          fileName: _jsxFileName,
+          lineNumber: 99
+        },
+        __self: this
+      });
+    }));
+  }))))))));
 }
 
 /* harmony default export */ __webpack_exports__["default"] = (BookCategoryList);
+
 
 /***/ }),
 
@@ -553,7 +600,10 @@ function BookCategoryList() {
 __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "react");
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
+/* harmony import */ var _lib_utilFunctions__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./../../lib/utilFunctions */ "./lib/utilFunctions.js");
+/* harmony import */ var _lib_utilFunctions__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(_lib_utilFunctions__WEBPACK_IMPORTED_MODULE_1__);
 var _jsxFileName = "D:\\Learn\\book-store\\vook-admin\\components\\ManageDiscount\\BookPublisher.js";
+
 
 
 function BookPublisher(_ref) {
@@ -562,34 +612,34 @@ function BookPublisher(_ref) {
   return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("tr", {
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 5
+      lineNumber: 6
     },
     __self: this
   }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("td", {
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 6
+      lineNumber: 7
     },
     __self: this
   }, sno), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("td", {
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 7
-    },
-    __self: this
-  }, publisher.name), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("td", {
-    __source: {
-      fileName: _jsxFileName,
       lineNumber: 8
     },
     __self: this
-  }, publisher.discount), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("td", {
+  }, Object(_lib_utilFunctions__WEBPACK_IMPORTED_MODULE_1__["getCapitalizedString"])(publisher.name)), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("td", {
     __source: {
       fileName: _jsxFileName,
       lineNumber: 9
     },
     __self: this
-  }, publisher.quantity));
+  }, publisher.discount + '%'), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("td", {
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 10
+    },
+    __self: this
+  }, publisher.books && publisher.books.length, !publisher.books && 0));
 }
 
 /* harmony default export */ __webpack_exports__["default"] = (BookPublisher);
@@ -607,7 +657,10 @@ function BookPublisher(_ref) {
 __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "react");
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
+/* harmony import */ var _lib_utilFunctions__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./../../lib/utilFunctions */ "./lib/utilFunctions.js");
+/* harmony import */ var _lib_utilFunctions__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(_lib_utilFunctions__WEBPACK_IMPORTED_MODULE_1__);
 var _jsxFileName = "D:\\Learn\\book-store\\vook-admin\\components\\ManageDiscount\\BookType.js";
+
 
 
 function BookType(_ref) {
@@ -616,37 +669,124 @@ function BookType(_ref) {
   return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("tr", {
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 5
+      lineNumber: 6
     },
     __self: this
   }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("td", {
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 6
+      lineNumber: 7
     },
     __self: this
   }, sno), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("td", {
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 7
-    },
-    __self: this
-  }, type.name), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("td", {
-    __source: {
-      fileName: _jsxFileName,
       lineNumber: 8
     },
     __self: this
-  }, type.discount), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("td", {
+  }, Object(_lib_utilFunctions__WEBPACK_IMPORTED_MODULE_1__["getCapitalizedString"])(type.name) || ''), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("td", {
     __source: {
       fileName: _jsxFileName,
       lineNumber: 9
     },
     __self: this
-  }, type.quantity));
+  }, type.books && type.books.length, !type.books && 0));
 }
 
 /* harmony default export */ __webpack_exports__["default"] = (BookType);
+
+/***/ }),
+
+/***/ "./lib/QueryMutations.js":
+/*!*******************************!*\
+  !*** ./lib/QueryMutations.js ***!
+  \*******************************/
+/*! exports provided: GET_CATEGORIES_QUERY, GET_TYPES_QUERY, GET_PUBLISHERS_QUERY, GET_ALL_BOOKS_QUERY, CREATE_BOOK_MUTATION */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "GET_CATEGORIES_QUERY", function() { return GET_CATEGORIES_QUERY; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "GET_TYPES_QUERY", function() { return GET_TYPES_QUERY; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "GET_PUBLISHERS_QUERY", function() { return GET_PUBLISHERS_QUERY; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "GET_ALL_BOOKS_QUERY", function() { return GET_ALL_BOOKS_QUERY; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "CREATE_BOOK_MUTATION", function() { return CREATE_BOOK_MUTATION; });
+/* harmony import */ var graphql_tag__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! graphql-tag */ "graphql-tag");
+/* harmony import */ var graphql_tag__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(graphql_tag__WEBPACK_IMPORTED_MODULE_0__);
+function _templateObject5() {
+  var data = _taggedTemplateLiteral(["\n    mutation CREATE_BOOK_MUTATION(\n        $title: String!, \n        $author: String!, \n        $publisher: String!, \n        $type: String!, \n        $subject: String!, \n        $category: String!, \n        $edition: Int!, \n        $quantity: Int!, \n        $detail: String!, \n        $description: String\n        $mrp: Int!, \n        $tags: [String!],\n        $images: [String!],\n        $slug: String!){\n        createBook(\n            title: $title,\n            author: $author,\n            publisher: $publisher,\n            type: $type,\n            subject: $subject,\n            category: $category,\n            edition: $edition, \n            quantity: $quantity, \n            detail: $detail, \n            description: $description\n            mrp: $mrp, \n            tags: $tags, \n            images: $images, \n            slug: $slug\n         ){\n            id\n            title\n            mrp\n            detail\n            publisher{\n                name\n            }\n            slug\n        }\n    }\n"]);
+
+  _templateObject5 = function _templateObject5() {
+    return data;
+  };
+
+  return data;
+}
+
+function _templateObject4() {
+  var data = _taggedTemplateLiteral(["\n    query GET_TYPES_QUERY{\n        getTypes{\n            id\n            name\n            books{\n                id\n            }\n        }\n    }\n"]);
+
+  _templateObject4 = function _templateObject4() {
+    return data;
+  };
+
+  return data;
+}
+
+function _templateObject3() {
+  var data = _taggedTemplateLiteral(["\n    query GET_CATEGORIES_QUERY{\n        getCategories{\n            id\n            name\n            books{\n                id\n            }\n        }\n    }\n"]);
+
+  _templateObject3 = function _templateObject3() {
+    return data;
+  };
+
+  return data;
+}
+
+function _templateObject2() {
+  var data = _taggedTemplateLiteral(["\n    query GET_PUBLISHERS_QUERY{\n        getPublishers{\n            id\n            name\n            discount\n            books{\n                id\n            }\n        }\n    }\n"]);
+
+  _templateObject2 = function _templateObject2() {
+    return data;
+  };
+
+  return data;
+}
+
+function _templateObject() {
+  var data = _taggedTemplateLiteral(["\n    query GET_ALL_BOOKS_QUERY {\n        getAllBooks{\n            id\n            title \n            author\n            dateTime \n            publisher{\n                name\n                discount\n            }\n            category{\n                name\n            }\n            type{\n                name\n            }\n            mrp\n            images{\n                src\n            }\n            sku\n        }\n    }\n    \n"]);
+
+  _templateObject = function _templateObject() {
+    return data;
+  };
+
+  return data;
+}
+
+function _taggedTemplateLiteral(strings, raw) { if (!raw) { raw = strings.slice(0); } return Object.freeze(Object.defineProperties(strings, { raw: { value: Object.freeze(raw) } })); }
+
+
+var GET_ALL_BOOKS_QUERY = graphql_tag__WEBPACK_IMPORTED_MODULE_0___default()(_templateObject());
+var GET_PUBLISHERS_QUERY = graphql_tag__WEBPACK_IMPORTED_MODULE_0___default()(_templateObject2());
+var GET_CATEGORIES_QUERY = graphql_tag__WEBPACK_IMPORTED_MODULE_0___default()(_templateObject3());
+var GET_TYPES_QUERY = graphql_tag__WEBPACK_IMPORTED_MODULE_0___default()(_templateObject4());
+var CREATE_BOOK_MUTATION = graphql_tag__WEBPACK_IMPORTED_MODULE_0___default()(_templateObject5());
+
+
+/***/ }),
+
+/***/ "./lib/utilFunctions.js":
+/*!******************************!*\
+  !*** ./lib/utilFunctions.js ***!
+  \******************************/
+/*! no static exports found */
+/***/ (function(module, exports) {
+
+module.exports = {
+  getCapitalizedString: function getCapitalizedString(string) {
+    return string[0].toUpperCase() + string.slice(1);
+  }
+};
 
 /***/ }),
 
@@ -722,7 +862,7 @@ function (_Component) {
 
 /***/ }),
 
-/***/ 3:
+/***/ 5:
 /*!****************************************!*\
   !*** multi ./pages/manage-discount.js ***!
   \****************************************/

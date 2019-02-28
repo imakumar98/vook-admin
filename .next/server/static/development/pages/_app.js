@@ -353,6 +353,10 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var next_link__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(next_link__WEBPACK_IMPORTED_MODULE_1__);
 /* harmony import */ var jquery__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! jquery */ "jquery");
 /* harmony import */ var jquery__WEBPACK_IMPORTED_MODULE_2___default = /*#__PURE__*/__webpack_require__.n(jquery__WEBPACK_IMPORTED_MODULE_2__);
+/* harmony import */ var nprogress__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! nprogress */ "nprogress");
+/* harmony import */ var nprogress__WEBPACK_IMPORTED_MODULE_3___default = /*#__PURE__*/__webpack_require__.n(nprogress__WEBPACK_IMPORTED_MODULE_3__);
+/* harmony import */ var next_router__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! next/router */ "next/router");
+/* harmony import */ var next_router__WEBPACK_IMPORTED_MODULE_4___default = /*#__PURE__*/__webpack_require__.n(next_router__WEBPACK_IMPORTED_MODULE_4__);
 var _jsxFileName = "D:\\Learn\\book-store\\vook-admin\\components\\Navbar.js";
 
 function _typeof(obj) { if (typeof Symbol === "function" && typeof Symbol.iterator === "symbol") { _typeof = function _typeof(obj) { return typeof obj; }; } else { _typeof = function _typeof(obj) { return obj && typeof Symbol === "function" && obj.constructor === Symbol && obj !== Symbol.prototype ? "symbol" : typeof obj; }; } return _typeof(obj); }
@@ -376,6 +380,20 @@ function _setPrototypeOf(o, p) { _setPrototypeOf = Object.setPrototypeOf || func
 
 
 
+
+
+
+next_router__WEBPACK_IMPORTED_MODULE_4___default.a.onRouteChangeStart = function () {
+  nprogress__WEBPACK_IMPORTED_MODULE_3___default.a.start();
+};
+
+next_router__WEBPACK_IMPORTED_MODULE_4___default.a.onRouteChangeComplete = function () {
+  nprogress__WEBPACK_IMPORTED_MODULE_3___default.a.done();
+};
+
+next_router__WEBPACK_IMPORTED_MODULE_4___default.a.onRouteChangeError = function () {
+  nprogress__WEBPACK_IMPORTED_MODULE_3___default.a.done();
+};
 
 var Navbar =
 /*#__PURE__*/
@@ -402,28 +420,28 @@ function (_Component) {
         className: "navbar default-layout col-lg-12 col-12 p-0 fixed-top d-flex flex-row",
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 15
+          lineNumber: 30
         },
         __self: this
       }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
         className: "text-center navbar-brand-wrapper d-flex align-items-top justify-content-center",
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 16
+          lineNumber: 31
         },
         __self: this
       }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(next_link__WEBPACK_IMPORTED_MODULE_1___default.a, {
         href: "/",
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 17
+          lineNumber: 32
         },
         __self: this
       }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("a", {
         className: "navbar-brand brand-logo",
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 18
+          lineNumber: 33
         },
         __self: this
       }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("img", {
@@ -431,21 +449,21 @@ function (_Component) {
         alt: "logo",
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 19
+          lineNumber: 34
         },
         __self: this
       }))), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(next_link__WEBPACK_IMPORTED_MODULE_1___default.a, {
         href: "/",
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 22
+          lineNumber: 37
         },
         __self: this
       }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("a", {
         className: "navbar-brand brand-logo-mini",
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 23
+          lineNumber: 38
         },
         __self: this
       }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("img", {
@@ -453,28 +471,28 @@ function (_Component) {
         alt: "logo",
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 24
+          lineNumber: 39
         },
         __self: this
       })))), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
         className: "navbar-menu-wrapper d-flex align-items-center",
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 28
+          lineNumber: 43
         },
         __self: this
       }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("ul", {
         className: "navbar-nav navbar-nav-right",
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 30
+          lineNumber: 45
         },
         __self: this
       }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("li", {
         className: "nav-item dropdown",
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 32
+          lineNumber: 47
         },
         __self: this
       }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("a", {
@@ -484,21 +502,21 @@ function (_Component) {
         "data-toggle": "dropdown",
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 33
+          lineNumber: 48
         },
         __self: this
       }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("i", {
         className: "mdi mdi-bell",
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 34
+          lineNumber: 49
         },
         __self: this
       }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("span", {
         className: "count",
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 35
+          lineNumber: 50
         },
         __self: this
       }, "2")), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
@@ -506,147 +524,147 @@ function (_Component) {
         "aria-labelledby": "notificationDropdown",
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 37
+          lineNumber: 52
         },
         __self: this
       }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("a", {
         className: "dropdown-item",
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 38
+          lineNumber: 53
         },
         __self: this
       }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("p", {
         className: "mb-0 font-weight-normal float-left",
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 39
+          lineNumber: 54
         },
         __self: this
       }, "You have 2 new notifications"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("span", {
         className: "badge badge-pill badge-warning float-right",
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 41
+          lineNumber: 56
         },
         __self: this
       }, "View all")), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
         className: "dropdown-divider",
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 45
+          lineNumber: 60
         },
         __self: this
       }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(next_link__WEBPACK_IMPORTED_MODULE_1___default.a, {
         href: "/chat",
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 46
+          lineNumber: 61
         },
         __self: this
       }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("a", {
         className: "dropdown-item preview-item",
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 47
+          lineNumber: 62
         },
         __self: this
       }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
         className: "preview-thumbnail",
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 48
+          lineNumber: 63
         },
         __self: this
       }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
         className: "preview-icon bg-warning",
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 49
+          lineNumber: 64
         },
         __self: this
       }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("i", {
         className: "mdi mdi-comment-text-outline mx-0",
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 50
+          lineNumber: 65
         },
         __self: this
       }))), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
         className: "preview-item-content",
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 53
+          lineNumber: 68
         },
         __self: this
       }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("h6", {
         className: "preview-subject font-weight-medium text-dark",
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 54
+          lineNumber: 69
         },
         __self: this
       }, "Unread Messages")))), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
         className: "dropdown-divider",
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 62
+          lineNumber: 77
         },
         __self: this
       }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(next_link__WEBPACK_IMPORTED_MODULE_1___default.a, {
         href: "/orders",
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 63
+          lineNumber: 78
         },
         __self: this
       }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("a", {
         className: "dropdown-item preview-item",
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 64
+          lineNumber: 79
         },
         __self: this
       }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
         className: "preview-thumbnail",
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 65
+          lineNumber: 80
         },
         __self: this
       }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
         className: "preview-icon bg-info",
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 66
+          lineNumber: 81
         },
         __self: this
       }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("i", {
         className: "mdi mdi-receipt mx-0",
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 67
+          lineNumber: 82
         },
         __self: this
       }))), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
         className: "preview-item-content",
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 70
+          lineNumber: 85
         },
         __self: this
       }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("h6", {
         className: "preview-subject font-weight-medium text-dark",
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 71
+          lineNumber: 86
         },
         __self: this
       }, "New Order Added")))))), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("li", {
         className: "nav-item d-none d-xl-inline-block",
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 81
+          lineNumber: 96
         },
         __self: this
       }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("a", {
@@ -654,14 +672,14 @@ function (_Component) {
         "aria-expanded": "false",
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 82
+          lineNumber: 97
         },
         __self: this
       }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("span", {
         className: "profile-text",
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 83
+          lineNumber: 98
         },
         __self: this
       }, "Hello, Ashwani"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("img", {
@@ -670,7 +688,7 @@ function (_Component) {
         alt: "Profile image",
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 84
+          lineNumber: 99
         },
         __self: this
       })))), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("button", {
@@ -679,14 +697,14 @@ function (_Component) {
         "data-toggle": "offcanvas",
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 89
+          lineNumber: 104
         },
         __self: this
       }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("span", {
         className: "mdi mdi-menu",
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 90
+          lineNumber: 105
         },
         __self: this
       }))));
@@ -1347,6 +1365,28 @@ module.exports = require("next/head");
 /***/ (function(module, exports) {
 
 module.exports = require("next/link");
+
+/***/ }),
+
+/***/ "next/router":
+/*!******************************!*\
+  !*** external "next/router" ***!
+  \******************************/
+/*! no static exports found */
+/***/ (function(module, exports) {
+
+module.exports = require("next/router");
+
+/***/ }),
+
+/***/ "nprogress":
+/*!****************************!*\
+  !*** external "nprogress" ***!
+  \****************************/
+/*! no static exports found */
+/***/ (function(module, exports) {
+
+module.exports = require("nprogress");
 
 /***/ }),
 

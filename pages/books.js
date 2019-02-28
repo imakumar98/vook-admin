@@ -1,36 +1,16 @@
 import React, { Component } from 'react'
 import Link from 'next/link';
 import {Query} from 'react-apollo';
-import gql from 'graphql-tag'; 
+import {GET_ALL_BOOKS_QUERY} from './../lib/QueryMutations';
 import Book from './../components/Books/BookRow';
 
-const GET_ALL_BOOKS_QUERY = gql`
-    query GET_ALL_BOOKS_QUERY {
-
-        getAllBooks{
-            id
-            title 
-            author 
-            publisher 
-            mrp
-            discount
-            category
-            type
-            images{
-                src
-            }
-            sku
-        }
-    }
-    
-`;
 
 class books extends Component {
   render() {
     return (
         <Query query={GET_ALL_BOOKS_QUERY}>
             {({data,error,loading})=>{
-                
+                console.log(data);
                 return (
                     <div className="row">
                     <div className="col-12 grid-margin">
@@ -63,7 +43,8 @@ class books extends Component {
                                                     </tr>
                                                 </thead>
                                                 <tbody>
-                                                    {!data.getAllBooks.length && <p>You Have 0 Books In Database</p>}
+                                                    {!data.getAllBooks.length && <tr><td><p>You have 0 Book In database</p></td></tr>}
+                                                    {data.getAllBooks.length==0 && <p>You Have 0 Books In Database</p>}
                                                     {data.getAllBooks.map((book,index)=><Book book={book} key={index} />)}
                                                     {loading && <p>Loading...</p>}
                                                 </tbody>
