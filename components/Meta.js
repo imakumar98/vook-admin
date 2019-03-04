@@ -5,7 +5,7 @@ import React from 'react'
 function Meta() {
   return (
     <Head>
-        <meta charset="utf-8" />
+        <meta charSet="utf-8" />
         <link rel="shortcut icon" href="/static/favicon.png" />
         <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
         {/* <link rel="manifest" href="%PUBLIC_URL%/manifest.json" /> */}

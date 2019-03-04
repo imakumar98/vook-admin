@@ -211,7 +211,7 @@ function Meta() {
     },
     __self: this
   }, react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("meta", {
-    charset: "utf-8",
+    charSet: "utf-8",
     __source: {
       fileName: _jsxFileName,
       lineNumber: 8
@@ -1080,15 +1080,19 @@ function (_Component) {
 /*!*******************!*\
   !*** ./config.js ***!
   \*******************/
-/*! exports provided: endpoint, perPage */
+/*! exports provided: endpoint, bookUploadUrl, bookDeleteUrl, perPage */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "endpoint", function() { return endpoint; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "bookUploadUrl", function() { return bookUploadUrl; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "bookDeleteUrl", function() { return bookDeleteUrl; });
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "perPage", function() { return perPage; });
 // This is client side config only - don't put anything in here that shouldn't be public!
 var endpoint = "http://localhost:4000";
+var bookUploadUrl = 'https://image-manager.server.vook.in/vook/book';
+var bookDeleteUrl = 'https://image-manager.server.vook.in/vook/book/';
 var perPage = 4;
 
 /***/ }),

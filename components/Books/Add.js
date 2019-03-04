@@ -8,6 +8,7 @@ import {Mutation, Query} from 'react-apollo';
 import Error from './../ErrorMessage';
 import SelectOption from './../common/SelectOption';
 import {GET_CATEGORIES_QUERY, GET_TYPES_QUERY, GET_PUBLISHERS_QUERY, CREATE_BOOK_MUTATION} from './../../lib/QueryMutations';
+import {titleToSlug, resetSelectElement} from './../../lib/utilFunctions';
 
 
 class Add extends Component {
@@ -59,14 +60,14 @@ class Add extends Component {
                     }
                 }
         
-                axios.post('http://localhost:5000/upload/vook/book', data, config)
+                axios.post('https://image-manager.server.vook.in/vook/book', data, config)
                 .then(res=>{
                     if(res.data.success){
                         const variable = 'image' + (i+1);
                         
                         var div = document.createElement('div');
                         div.className = 'dropzone-image';
-                        div.innerHTML = '<img src="'+res.data.url+'" name="'+variable +'" className="img-responsive" width="100px" height="200px">';
+                        div.innerHTML = '<img src="'+res.data.url+'" name="'+variable +'" className="img-responsive" width="92px" height="125px">';
                         document.getElementById('dropzone-images').appendChild(div);
                         this.setState({images:[...this.state.images,res.data.url]});
                     }
@@ -131,6 +132,8 @@ class Add extends Component {
             else{
                 document.getElementById('title').style.border = '1px solid #e65251';
             }
+            var slug = titleToSlug(e.target.value); 
+            this.setState({slug:slug});
         }
         if(e.target.name=='detail'){
             if(e.target.value.length>150 && e.target.value.length<=160){
@@ -140,6 +143,7 @@ class Add extends Component {
                 document.getElementById('detail').style.border = '1px solid #e65251';
             }
         }
+        
         this.setState({[e.target.name] : e.target.value});
     }
 
@@ -223,6 +227,11 @@ class Add extends Component {
                                         <div className="col-sm-9">
                                             <Query query={GET_PUBLISHERS_QUERY}>
                                                 {({data,error,loading})=>{
+                                                    if(loading) return (
+                                                        <select className="form-control" name="publisher" id="publisher" onChange={this.onChange}>
+                                                            <option value="">-SELECT-PUBLISHER-</option>
+                                                        </select>
+                                                    );
                                                     return(
                                                     <select className="form-control" name="publisher" id="publisher" onChange={this.onChange}>
                                                         <option value="">-SELECT-PUBLISHER-</option>
@@ -241,6 +250,12 @@ class Add extends Component {
                                             
                                                 <Query query={GET_CATEGORIES_QUERY}>
                                                    {({data,error,loading})=>{
+                                                       if(loading) return (
+                                                        <select className="form-control" name="category" id="category" onChange={this.onChange}>
+                                                            <option value="">-SELECT-CATEGORY-</option>
+                                                        
+                                                        </select>
+                                                       );
                                                        return(
                                                         <select className="form-control" name="category" id="category" onChange={this.onChange}>
                                                             <option value="">-SELECT-CATEGORY-</option>
@@ -273,6 +288,12 @@ class Add extends Component {
                                         <div className="col-sm-9">
                                             <Query query={GET_TYPES_QUERY}>
                                                 {({data,error,loading})=>{
+                                                    if(loading) return ( <select className="form-control" name="type" id="type" onChange={this.onChange}>
+                                                    <option value="">-SELECT-TYPE-</option>
+                                                   
+                                                   
+                                                </select>
+                                                );
                                                     return(
                                                         <select className="form-control" name="type" id="type" onChange={this.onChange}>
                                                             <option value="">-SELECT-TYPE-</option>
@@ -380,7 +401,7 @@ class Add extends Component {
                                     <div className="form-group row">
                                         <label className="col-sm-3 col-form-label">Slug</label>
                                         <div className="col-sm-9">
-                                            <input type="text" className="form-control" name="slug" value={this.state.value} onChange={this.onChange}/>
+                                            <input type="text" className="form-control" name="slug" value={this.state.slug} onChange={this.onChange}/>
                                         </div>
                                     </div>
                                 </div>
@@ -418,10 +439,20 @@ class Add extends Component {
                                     <input type="submit" className="btn btn-success" onClick={async e=>{
                                     e.preventDefault();
                                     const res = await createBook();
-                                    console.log(res);
                                     this.setState({title: '', author: '', publisher: '', category: '', subject: '', type: '', edition: '', quantity: '', detail: '',description: '', mrp: '',
                                     tags: [], tag: '', images:[],slug: ''});
-                                    document.getElementById('dropzone-images').appendChild('<div></div>');
+                                    resetSelectElement(document.getElementById('publisher'));
+                                    resetSelectElement(document.getElementById('category'));
+                                    resetSelectElement(document.getElementById('type'));
+                                    resetSelectElement(document.getElementById('edition'));
+                                    resetSelectElement(document.getElementById('subject'));
+                                    document.getElementById('detail').style.border = '1px solid #f2f2f2';
+                                    document.getElementById('title').style.border = '1px solid #f2f2f2';
+                                    var list = document.getElementById('dropzone-images')
+                                    while (list.hasChildNodes()) {   
+                                        list.removeChild(list.firstChild);
+                                    }
+                                    
                                     
                                     
                                 }} value="SAVE" />

@@ -27,7 +27,7 @@ function InputGroup({
                 value={value} 
                 onChange={onChange}
                 value = {value}/>
-            {info>0 && <small>{info} | 60 Characters Typed</small>}
+            {info>0 && <small>{info} | 40 Characters Typed</small>}
             {error && <small className="texxt-danger">{error}</small>}
             
                 

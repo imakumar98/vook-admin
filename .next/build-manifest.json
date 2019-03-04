@@ -11,15 +11,11 @@
       "static/runtime/webpack.js",
       "static/runtime/main.js"
     ],
-    "/book/add": [
+    "/books": [
       "static/runtime/webpack.js",
       "static/runtime/main.js"
     ],
     "/manage-discount": [
-      "static/runtime/webpack.js",
-      "static/runtime/main.js"
-    ],
-    "/books": [
       "static/runtime/webpack.js",
       "static/runtime/main.js"
     ]

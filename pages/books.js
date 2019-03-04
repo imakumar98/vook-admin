@@ -10,6 +10,8 @@ class books extends Component {
     return (
         <Query query={GET_ALL_BOOKS_QUERY}>
             {({data,error,loading})=>{
+                if(error) return <p>Error</p>
+                if(loading) return <p>Loading</p>
                 console.log(data);
                 return (
                     <div className="row">
@@ -20,6 +22,9 @@ class books extends Component {
                                 <div className="pull-right">
                                 <Link prefetch href="/book/add">
                                     <a className="btn btn-primary btn-fw">ADD BOOK</a>
+                                </Link>{'  '}
+                                <Link prefetch href="/book/add">
+                                    <a className="btn btn-primary btn-fw">ADD SET</a>
                                 </Link>
                                 </div>
                             </div>
@@ -43,8 +48,8 @@ class books extends Component {
                                                     </tr>
                                                 </thead>
                                                 <tbody>
-                                                    {!data.getAllBooks.length && <tr><td><p>You have 0 Book In database</p></td></tr>}
-                                                    {data.getAllBooks.length==0 && <p>You Have 0 Books In Database</p>}
+                                                    {/* {!data.getAllBooks && <tr><td><p>You have 0 Book In database</p></td></tr>}
+                                                    {data.getAllBooks.length==0 && <p>You Have 0 Books In Database</p>} */}
                                                     {data.getAllBooks.map((book,index)=><Book book={book} key={index} />)}
                                                     {loading && <p>Loading...</p>}
                                                 </tbody>

@@ -16430,4 +16430,15 @@ ul {
   border-radius:2px;
 }
 
+.modal-content{
+  background-color: #FFF;
+}
+.modal-body{
+  padding-top:30px;
+  padding-bottom:30px;
+}
+
+.image span:hover{
+  color:'#000';
+}
 

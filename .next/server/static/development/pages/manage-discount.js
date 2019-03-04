@@ -88,7 +88,7 @@ module.exports =
 /******/
 /******/
 /******/ 	// Load entry module and return exports
-/******/ 	return __webpack_require__(__webpack_require__.s = 5);
+/******/ 	return __webpack_require__(__webpack_require__.s = 4);
 /******/ })
 /************************************************************************/
 /******/ ({
@@ -701,7 +701,7 @@ function BookType(_ref) {
 /*!*******************************!*\
   !*** ./lib/QueryMutations.js ***!
   \*******************************/
-/*! exports provided: GET_CATEGORIES_QUERY, GET_TYPES_QUERY, GET_PUBLISHERS_QUERY, GET_ALL_BOOKS_QUERY, CREATE_BOOK_MUTATION */
+/*! exports provided: GET_CATEGORIES_QUERY, GET_TYPES_QUERY, GET_PUBLISHERS_QUERY, GET_ALL_BOOKS_QUERY, GET_SINGLE_BOOK, CREATE_BOOK_MUTATION, DELETE_BOOK_MUTATION, UPDATE_BOOK_MUTATION */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -710,9 +710,42 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "GET_TYPES_QUERY", function() { return GET_TYPES_QUERY; });
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "GET_PUBLISHERS_QUERY", function() { return GET_PUBLISHERS_QUERY; });
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "GET_ALL_BOOKS_QUERY", function() { return GET_ALL_BOOKS_QUERY; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "GET_SINGLE_BOOK", function() { return GET_SINGLE_BOOK; });
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "CREATE_BOOK_MUTATION", function() { return CREATE_BOOK_MUTATION; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "DELETE_BOOK_MUTATION", function() { return DELETE_BOOK_MUTATION; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "UPDATE_BOOK_MUTATION", function() { return UPDATE_BOOK_MUTATION; });
 /* harmony import */ var graphql_tag__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! graphql-tag */ "graphql-tag");
 /* harmony import */ var graphql_tag__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(graphql_tag__WEBPACK_IMPORTED_MODULE_0__);
+function _templateObject8() {
+  var data = _taggedTemplateLiteral(["\n    mutation UPDATE_BOOK_MUTATION(\n        $id: String!,\n        $title: String!, \n        $author: String!, \n        $publisher: String!, \n        $type: String!, \n        $subject: String!, \n        $category: String!, \n        $edition: Int!, \n        $quantity: Int!, \n        $detail: String!, \n        $description: String\n        $mrp: Int!, \n        $tags: [String!],\n        $images: [String!],\n        $slug: String!){\n     updateBook(\n        id: $id,\n        title: $title,\n        author: $author,\n        publisher: $publisher,\n        type: $type,\n        subject: $subject,\n        category: $category,\n        edition: $edition, \n        quantity: $quantity, \n        detail: $detail, \n        description: $description\n        mrp: $mrp, \n        tags: $tags, \n        images: $images, \n        slug: $slug\n     ){\n        message\n     }   \n    }\n"]);
+
+  _templateObject8 = function _templateObject8() {
+    return data;
+  };
+
+  return data;
+}
+
+function _templateObject7() {
+  var data = _taggedTemplateLiteral(["\n    query GET_SINGLE_BOOK($id:String!){\n        getSingleBook(id:$id){\n            id\n            title\n            publisher{\n                name\n            }\n            category{\n                name\n            }\n            type{\n                name\n            }\n            author\n            edition\n            tags{\n                text\n            }\n            images{\n                src\n            }\n            mrp\n            detail\n            description\n            quantity\n            slug\n            subject\n        }\n    }\n"]);
+
+  _templateObject7 = function _templateObject7() {
+    return data;
+  };
+
+  return data;
+}
+
+function _templateObject6() {
+  var data = _taggedTemplateLiteral(["\n    mutation DELETE_BOOK($id:String!){\n        deleteBook(id:$id){\n            message\n        }\n    }\n"]);
+
+  _templateObject6 = function _templateObject6() {
+    return data;
+  };
+
+  return data;
+}
+
 function _templateObject5() {
   var data = _taggedTemplateLiteral(["\n    mutation CREATE_BOOK_MUTATION(\n        $title: String!, \n        $author: String!, \n        $publisher: String!, \n        $type: String!, \n        $subject: String!, \n        $category: String!, \n        $edition: Int!, \n        $quantity: Int!, \n        $detail: String!, \n        $description: String\n        $mrp: Int!, \n        $tags: [String!],\n        $images: [String!],\n        $slug: String!){\n        createBook(\n            title: $title,\n            author: $author,\n            publisher: $publisher,\n            type: $type,\n            subject: $subject,\n            category: $category,\n            edition: $edition, \n            quantity: $quantity, \n            detail: $detail, \n            description: $description\n            mrp: $mrp, \n            tags: $tags, \n            images: $images, \n            slug: $slug\n         ){\n            id\n            title\n            mrp\n            detail\n            publisher{\n                name\n            }\n            slug\n        }\n    }\n"]);
 
@@ -771,6 +804,9 @@ var GET_PUBLISHERS_QUERY = graphql_tag__WEBPACK_IMPORTED_MODULE_0___default()(_t
 var GET_CATEGORIES_QUERY = graphql_tag__WEBPACK_IMPORTED_MODULE_0___default()(_templateObject3());
 var GET_TYPES_QUERY = graphql_tag__WEBPACK_IMPORTED_MODULE_0___default()(_templateObject4());
 var CREATE_BOOK_MUTATION = graphql_tag__WEBPACK_IMPORTED_MODULE_0___default()(_templateObject5());
+var DELETE_BOOK_MUTATION = graphql_tag__WEBPACK_IMPORTED_MODULE_0___default()(_templateObject6());
+var GET_SINGLE_BOOK = graphql_tag__WEBPACK_IMPORTED_MODULE_0___default()(_templateObject7());
+var UPDATE_BOOK_MUTATION = graphql_tag__WEBPACK_IMPORTED_MODULE_0___default()(_templateObject8());
 
 
 /***/ }),
@@ -784,7 +820,14 @@ var CREATE_BOOK_MUTATION = graphql_tag__WEBPACK_IMPORTED_MODULE_0___default()(_t
 
 module.exports = {
   getCapitalizedString: function getCapitalizedString(string) {
+    if (string == 'ncert') return string.toUpperCase();
     return string[0].toUpperCase() + string.slice(1);
+  },
+  titleToSlug: function titleToSlug(title) {
+    return title.trim().toLowerCase().replace(/ /g, '-');
+  },
+  resetSelectElement: function resetSelectElement(selectElement) {
+    selectElement.selectedIndex = 0;
   }
 };
 
@@ -862,7 +905,7 @@ function (_Component) {
 
 /***/ }),
 
-/***/ 5:
+/***/ 4:
 /*!****************************************!*\
   !*** multi ./pages/manage-discount.js ***!
   \****************************************/
