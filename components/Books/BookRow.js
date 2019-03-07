@@ -1,7 +1,9 @@
 import React from 'react'
 import Link from 'next/link';
-import {getCapitalizedString} from './../../lib/utilFunctions';
+import {getCapitalizedString, getDateFromDateTime} from './../../lib/utilFunctions';
 import BookDeleteModal from './BookDeleteModal';
+import Switch from './../common/Switch';
+
 
 function BookRow({book}) {
   return (
@@ -16,10 +18,11 @@ function BookRow({book}) {
             </Link>
         </td>
         <td>{book.author}, {getCapitalizedString(book.publisher.name)}</td>
-        <td>{book.mrp}</td>
+        {/* <td><Switch/></td> */}
+        <td>&#8377;{book.mrp}</td>
         <td>{getCapitalizedString(book.category.name)}</td>
-        <td>{getCapitalizedString(book.type.name)}</td>
-        <td>{book.dateTime}</td>
+        
+        <td>{getDateFromDateTime(book.dateTime)}</td>
         <td>
             
             <Link href={'/book/edit?id='+book.id}><a>UPDATE</a></Link>&nbsp;&nbsp;

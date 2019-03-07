@@ -198,8 +198,6 @@ class Add extends Component {
                 <div className="col-12 grid-margin">
                 <div className="card">
                     <div className="card-body">
-                        <h4 className="text-center" style={{marginBottom:'50px'}}>ADD BOOK</h4>
-                        
                         <div className="form-sample">
                             <p className="card-description">Book Details</p>
                             <div className="row">

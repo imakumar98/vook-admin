@@ -1,5 +1,6 @@
 import React from 'react';
 import OrderListRow from './OrderListRow';
+import Link from 'next/link';
 
 function OrderList() {
   return (
@@ -7,10 +8,19 @@ function OrderList() {
         <div className="col-12 grid-margin">
             <div className="card">
                 <div className="card-header">
-                    <button>ADD BOOK</button>
+                <div className="row">
+                    <div className="col-md-11">
+                        <input type="text" style={{marginLeft:'-20px'}} placeholder="Search by Order, Customer Name, Order Date" className="form-control"/>
+                    </div>
+                    <div className="col-md-1" >
+                        <Link prefetch href="/book/add">
+                            <a className="btn btn-primary btn-fw" style={{minWidth:'115px'}}>ADD ORDER</a>
+                        </Link>
+                        
+                    </div>
+                </div>
                 </div>
                 <div className="card-body">
-                    <h4 className="text-center" style={{marginBottom:'50px'}}>ACTIVE ORDERS</h4>
                     <div className="form-sample">
                         <div className="row">
                             <div className="table-responsive">
@@ -25,8 +35,8 @@ function OrderList() {
                                         </tr>
                                     </thead>
                                     <tbody>
-                                        <OrderList/>
-                                        <OrderList/>
+                                        <OrderListRow/>
+                                        <OrderListRow/>
                                     </tbody>
                                 </table>
                             </div>

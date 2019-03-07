@@ -29,7 +29,7 @@ import NavButton from './NavButton';
                 <NavButton text="Books" iconClassName="menu-icon mdi mdi-book" to="/books"/>
                 <NavButton text="Orders" iconClassName="menu-icon mdi mdi-receipt" to="/orders"/>
                 <NavButton text="Manage Discounts" iconClassName="menu-icon fa fa-percent" to="/manage-discount"/>
-                <NavButton text="Chat" iconClassName="menu-icon fa fa-envelope" to="/chat"/>
+                <NavButton text="Chat Support" iconClassName="menu-icon fa fa-comments" to="/chat"/>
                 <NavButton text="Notes" iconClassName="menu-icon fa fa-sticky-note-o" to="/notes"/>
                 <NavButton text="My Account Settings" iconClassName="menu-icon fa fa-gear" to="/account"/>
                 <NavButton text="Logout" iconClassName="menu-icon fa fa-sign-out" to="/logout"/>

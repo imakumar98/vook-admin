@@ -1030,8 +1030,8 @@ function (_Component) {
         },
         __self: this
       }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_NavButton__WEBPACK_IMPORTED_MODULE_2__["default"], {
-        text: "Chat",
-        iconClassName: "menu-icon fa fa-envelope",
+        text: "Chat Support",
+        iconClassName: "menu-icon fa fa-comments",
         to: "/chat",
         __source: {
           fileName: _jsxFileName,

@@ -88,7 +88,7 @@ module.exports =
 /******/
 /******/
 /******/ 	// Load entry module and return exports
-/******/ 	return __webpack_require__(__webpack_require__.s = 6);
+/******/ 	return __webpack_require__(__webpack_require__.s = 5);
 /******/ })
 /************************************************************************/
 /******/ ({
@@ -318,7 +318,9 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _lib_utilFunctions__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./../../lib/utilFunctions */ "./lib/utilFunctions.js");
 /* harmony import */ var _lib_utilFunctions__WEBPACK_IMPORTED_MODULE_2___default = /*#__PURE__*/__webpack_require__.n(_lib_utilFunctions__WEBPACK_IMPORTED_MODULE_2__);
 /* harmony import */ var _BookDeleteModal__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./BookDeleteModal */ "./components/Books/BookDeleteModal.js");
+/* harmony import */ var _common_Switch__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ./../common/Switch */ "./components/common/Switch.js");
 var _jsxFileName = "D:\\Learn\\book-store\\vook-admin\\components\\Books\\BookRow.js";
+
 
 
 
@@ -329,19 +331,19 @@ function BookRow(_ref) {
   return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("tr", {
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 8
+      lineNumber: 10
     },
     __self: this
   }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("td", {
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 9
+      lineNumber: 11
     },
     __self: this
   }, "# ", book.sku), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("td", {
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 10
+      lineNumber: 12
     },
     __self: this
   }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("img", {
@@ -354,100 +356,138 @@ function BookRow(_ref) {
     },
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 10
+      lineNumber: 12
     },
     __self: this
   })), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("td", {
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 11
+      lineNumber: 13
     },
     __self: this
   }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(next_link__WEBPACK_IMPORTED_MODULE_1___default.a, {
     href: "/book-edit",
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 12
+      lineNumber: 14
     },
     __self: this
   }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("a", {
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 13
+      lineNumber: 15
     },
     __self: this
   }, book.title))), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("td", {
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 18
+      lineNumber: 20
     },
     __self: this
   }, book.author, ", ", Object(_lib_utilFunctions__WEBPACK_IMPORTED_MODULE_2__["getCapitalizedString"])(book.publisher.name)), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("td", {
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 19
+      lineNumber: 22
     },
     __self: this
-  }, book.mrp), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("td", {
+  }, "\u20B9", book.mrp), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("td", {
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 20
+      lineNumber: 23
     },
     __self: this
   }, Object(_lib_utilFunctions__WEBPACK_IMPORTED_MODULE_2__["getCapitalizedString"])(book.category.name)), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("td", {
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 21
+      lineNumber: 25
     },
     __self: this
-  }, Object(_lib_utilFunctions__WEBPACK_IMPORTED_MODULE_2__["getCapitalizedString"])(book.type.name)), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("td", {
+  }, Object(_lib_utilFunctions__WEBPACK_IMPORTED_MODULE_2__["getDateFromDateTime"])(book.dateTime)), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("td", {
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 22
-    },
-    __self: this
-  }, book.dateTime), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("td", {
-    __source: {
-      fileName: _jsxFileName,
-      lineNumber: 23
+      lineNumber: 26
     },
     __self: this
   }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(next_link__WEBPACK_IMPORTED_MODULE_1___default.a, {
     href: '/book/edit?id=' + book.id,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 25
+      lineNumber: 28
     },
     __self: this
   }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("a", {
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 25
+      lineNumber: 28
     },
     __self: this
   }, "UPDATE")), "\xA0\xA0", react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("br", {
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 26
+      lineNumber: 29
     },
     __self: this
   }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("br", {
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 26
+      lineNumber: 29
     },
     __self: this
   }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_BookDeleteModal__WEBPACK_IMPORTED_MODULE_3__["default"], {
     bookId: book.id,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 27
+      lineNumber: 30
     },
     __self: this
   })));
 }
 
 /* harmony default export */ __webpack_exports__["default"] = (BookRow);
+
+/***/ }),
+
+/***/ "./components/common/Switch.js":
+/*!*************************************!*\
+  !*** ./components/common/Switch.js ***!
+  \*************************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "react");
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
+var _jsxFileName = "D:\\Learn\\book-store\\vook-admin\\components\\common\\Switch.js";
+
+
+function Switch() {
+  return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("label", {
+    className: "switch",
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 7
+    },
+    __self: this
+  }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("input", {
+    type: "checkbox",
+    checked: true,
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 8
+    },
+    __self: this
+  }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("span", {
+    className: "slider round",
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 9
+    },
+    __self: this
+  }));
+}
+
+/* harmony default export */ __webpack_exports__["default"] = (Switch);
 
 /***/ }),
 
@@ -582,6 +622,10 @@ module.exports = {
   },
   resetSelectElement: function resetSelectElement(selectElement) {
     selectElement.selectedIndex = 0;
+  },
+  getDateFromDateTime: function getDateFromDateTime(string) {
+    var date = new Date(string);
+    return date.getDay() + '-' + (date.getMonth() + 1) + '-' + date.getFullYear();
   }
 };
 
@@ -604,6 +648,8 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var react_apollo__WEBPACK_IMPORTED_MODULE_2___default = /*#__PURE__*/__webpack_require__.n(react_apollo__WEBPACK_IMPORTED_MODULE_2__);
 /* harmony import */ var _lib_QueryMutations__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./../lib/QueryMutations */ "./lib/QueryMutations.js");
 /* harmony import */ var _components_Books_BookRow__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ./../components/Books/BookRow */ "./components/Books/BookRow.js");
+/* harmony import */ var next_head__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! next/head */ "next/head");
+/* harmony import */ var next_head__WEBPACK_IMPORTED_MODULE_5___default = /*#__PURE__*/__webpack_require__.n(next_head__WEBPACK_IMPORTED_MODULE_5__);
 var _jsxFileName = "D:\\Learn\\book-store\\vook-admin\\pages\\books.js";
 
 function _typeof(obj) { if (typeof Symbol === "function" && typeof Symbol.iterator === "symbol") { _typeof = function _typeof(obj) { return typeof obj; }; } else { _typeof = function _typeof(obj) { return obj && typeof Symbol === "function" && obj.constructor === Symbol && obj !== Symbol.prototype ? "symbol" : typeof obj; }; } return _typeof(obj); }
@@ -630,6 +676,7 @@ function _setPrototypeOf(o, p) { _setPrototypeOf = Object.setPrototypeOf || func
 
 
 
+
 var books =
 /*#__PURE__*/
 function (_Component) {
@@ -648,7 +695,7 @@ function (_Component) {
         query: _lib_QueryMutations__WEBPACK_IMPORTED_MODULE_3__["GET_ALL_BOOKS_QUERY"],
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 11
+          lineNumber: 12
         },
         __self: this
       }, function (_ref) {
@@ -658,61 +705,88 @@ function (_Component) {
         if (error) return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("p", {
           __source: {
             fileName: _jsxFileName,
-            lineNumber: 13
+            lineNumber: 14
           },
           __self: this
         }, "Error");
         if (loading) return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("p", {
           __source: {
             fileName: _jsxFileName,
-            lineNumber: 14
+            lineNumber: 15
           },
           __self: this
-        }, "Loading");
-        console.log(data);
+        }, "Loading...");
         return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
           className: "row",
           __source: {
             fileName: _jsxFileName,
-            lineNumber: 17
+            lineNumber: 18
           },
           __self: this
-        }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+        }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(next_head__WEBPACK_IMPORTED_MODULE_5___default.a, {
+          __source: {
+            fileName: _jsxFileName,
+            lineNumber: 19
+          },
+          __self: this
+        }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("title", {
+          __source: {
+            fileName: _jsxFileName,
+            lineNumber: 20
+          },
+          __self: this
+        }, "All Books | Vook")), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
           className: "col-12 grid-margin",
           __source: {
             fileName: _jsxFileName,
-            lineNumber: 18
+            lineNumber: 22
           },
           __self: this
         }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
           className: "card",
           __source: {
             fileName: _jsxFileName,
-            lineNumber: 19
+            lineNumber: 23
           },
           __self: this
         }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
           className: "card-header",
           __source: {
             fileName: _jsxFileName,
-            lineNumber: 20
+            lineNumber: 24
           },
           __self: this
-        }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("h4", {
-          className: "text-center",
+        }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+          className: "row",
+          __source: {
+            fileName: _jsxFileName,
+            lineNumber: 25
+          },
+          __self: this
+        }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+          className: "col-md-10",
+          __source: {
+            fileName: _jsxFileName,
+            lineNumber: 26
+          },
+          __self: this
+        }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("input", {
+          type: "text",
           style: {
-            marginBottom: '50px'
+            marginLeft: '-20px'
           },
+          placeholder: "Search by Title, Author, Category",
+          className: "form-control",
           __source: {
             fileName: _jsxFileName,
-            lineNumber: 21
+            lineNumber: 27
           },
           __self: this
-        }, "ALL BOOKS"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
-          className: "pull-right",
+        })), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+          className: "col-md-2",
           __source: {
             fileName: _jsxFileName,
-            lineNumber: 22
+            lineNumber: 29
           },
           __self: this
         }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(next_link__WEBPACK_IMPORTED_MODULE_1___default.a, {
@@ -720,136 +794,136 @@ function (_Component) {
           href: "/book/add",
           __source: {
             fileName: _jsxFileName,
-            lineNumber: 23
+            lineNumber: 30
           },
           __self: this
         }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("a", {
           className: "btn btn-primary btn-fw",
+          style: {
+            minWidth: '115px'
+          },
           __source: {
             fileName: _jsxFileName,
-            lineNumber: 24
+            lineNumber: 31
           },
           __self: this
         }, "ADD BOOK")), '  ', react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(next_link__WEBPACK_IMPORTED_MODULE_1___default.a, {
           prefetch: true,
-          href: "/book/add",
+          href: "/book/add-set",
           __source: {
             fileName: _jsxFileName,
-            lineNumber: 26
+            lineNumber: 33
           },
           __self: this
         }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("a", {
           className: "btn btn-primary btn-fw",
+          style: {
+            minWidth: '115px'
+          },
           __source: {
             fileName: _jsxFileName,
-            lineNumber: 27
+            lineNumber: 34
           },
           __self: this
-        }, "ADD SET")))), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+        }, "ADD SET"))))), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
           className: "card-body",
           __source: {
             fileName: _jsxFileName,
-            lineNumber: 31
+            lineNumber: 39
           },
           __self: this
         }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
           className: "form-sample",
           __source: {
             fileName: _jsxFileName,
-            lineNumber: 32
+            lineNumber: 40
           },
           __self: this
         }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
           className: "row",
           __source: {
             fileName: _jsxFileName,
-            lineNumber: 34
+            lineNumber: 41
           },
           __self: this
         }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
           className: "table-responsive",
           __source: {
             fileName: _jsxFileName,
-            lineNumber: 35
+            lineNumber: 42
           },
           __self: this
         }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("table", {
           className: "table",
           __source: {
             fileName: _jsxFileName,
-            lineNumber: 36
+            lineNumber: 43
           },
           __self: this
         }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("thead", {
           __source: {
             fileName: _jsxFileName,
-            lineNumber: 37
+            lineNumber: 44
           },
           __self: this
         }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("tr", {
           __source: {
             fileName: _jsxFileName,
-            lineNumber: 38
+            lineNumber: 45
           },
           __self: this
         }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("th", {
           __source: {
             fileName: _jsxFileName,
-            lineNumber: 39
+            lineNumber: 46
           },
           __self: this
         }, "SKU"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("th", {
           __source: {
             fileName: _jsxFileName,
-            lineNumber: 40
+            lineNumber: 47
           },
           __self: this
         }, "Image"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("th", {
           __source: {
             fileName: _jsxFileName,
-            lineNumber: 41
+            lineNumber: 48
           },
           __self: this
         }, "Title"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("th", {
           __source: {
             fileName: _jsxFileName,
-            lineNumber: 42
+            lineNumber: 49
           },
           __self: this
         }, "Author/Publisher"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("th", {
           __source: {
             fileName: _jsxFileName,
-            lineNumber: 43
+            lineNumber: 51
           },
           __self: this
         }, "MRP"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("th", {
           __source: {
             fileName: _jsxFileName,
-            lineNumber: 44
+            lineNumber: 52
           },
           __self: this
         }, "Category"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("th", {
           __source: {
             fileName: _jsxFileName,
-            lineNumber: 45
-          },
-          __self: this
-        }, "Type"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("th", {
-          __source: {
-            fileName: _jsxFileName,
-            lineNumber: 46
+            lineNumber: 54
           },
           __self: this
         }, "Date"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("th", {
           __source: {
             fileName: _jsxFileName,
-            lineNumber: 47
+            lineNumber: 55
           },
           __self: this
         }, "Action"))), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("tbody", {
           __source: {
             fileName: _jsxFileName,
-            lineNumber: 50
+            lineNumber: 58
           },
           __self: this
         }, data.getAllBooks.map(function (book, index) {
@@ -858,26 +932,26 @@ function (_Component) {
             key: index,
             __source: {
               fileName: _jsxFileName,
-              lineNumber: 53
+              lineNumber: 61
             },
             __self: this
           });
         }), loading && react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("p", {
           __source: {
             fileName: _jsxFileName,
-            lineNumber: 54
+            lineNumber: 62
           },
           __self: this
         }, "Loading..."))))), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("br", {
           __source: {
             fileName: _jsxFileName,
-            lineNumber: 59
+            lineNumber: 67
           },
           __self: this
         }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("br", {
           __source: {
             fileName: _jsxFileName,
-            lineNumber: 59
+            lineNumber: 67
           },
           __self: this
         }))))));
@@ -892,7 +966,7 @@ function (_Component) {
 
 /***/ }),
 
-/***/ 6:
+/***/ 5:
 /*!******************************!*\
   !*** multi ./pages/books.js ***!
   \******************************/
@@ -923,6 +997,17 @@ module.exports = require("@babel/runtime/regenerator");
 /***/ (function(module, exports) {
 
 module.exports = require("graphql-tag");
+
+/***/ }),
+
+/***/ "next/head":
+/*!****************************!*\
+  !*** external "next/head" ***!
+  \****************************/
+/*! no static exports found */
+/***/ (function(module, exports) {
+
+module.exports = require("next/head");
 
 /***/ }),
 
